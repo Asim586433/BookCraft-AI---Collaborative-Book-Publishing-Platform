@@ -77,9 +77,12 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.15);
             color: var(--accent);
         }
 
@@ -434,6 +437,243 @@
             font-size: 14px;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .modal-body {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--gray);
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Collaboration Styles */
+        .collaborator-list {
+            list-style: none;
+        }
+
+        .collaborator-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .collaborator-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .collaborator-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .collaborator-role {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* Publishing Options */
+        .publishing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .publishing-option {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .publishing-option:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .publishing-option i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .option-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* AI Tools Section */
+        .ai-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .ai-tool {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .ai-tool:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-tool-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e6eeff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .ai-tool-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .ai-tool-description {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
         @media (max-width: 992px) {
             .main-content {
                 flex-direction: column;
@@ -464,6 +704,14 @@
             .ai-features {
                 grid-template-columns: 1fr;
             }
+            
+            .ai-tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .publishing-options {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -477,16 +725,16 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">My Projects</a></li>
-                        <li><a href="#">Collaborate</a></li>
-                        <li><a href="#">AI Tools</a></li>
-                        <li><a href="#">Publish</a></li>
+                        <li><a href="#" class="nav-link active" data-target="dashboard">Dashboard</a></li>
+                        <li><a href="#" class="nav-link" data-target="my-projects">My Projects</a></li>
+                        <li><a href="#" class="nav-link" data-target="collaborate">Collaborate</a></li>
+                        <li><a href="#" class="nav-link" data-target="ai-tools">AI Tools</a></li>
+                        <li><a href="#" class="nav-link" data-target="publish">Publish</a></li>
                     </ul>
                 </nav>
                 <div class="user-actions">
-                    <button class="btn btn-outline">Sign In</button>
-                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-outline" id="login-btn">Sign In</button>
+                    <button class="btn btn-primary" id="signup-btn">Get Started</button>
                 </div>
             </div>
         </div>
@@ -513,7 +761,7 @@
                         <i class="fas fa-feather-alt"></i>
                         <span>Science Fiction Novel</span>
                     </li>
-                    <li class="project-item">
+                    <li class="project-item" id="new-project-btn">
                         <i class="fas fa-plus-circle"></i>
                         <span>Create New Project</span>
                     </li>
@@ -533,7 +781,7 @@
                         <i class="fas fa-user"></i>
                         <span>Emma Wilson (Researcher)</span>
                     </li>
-                    <li class="project-item">
+                    <li class="project-item" id="invite-collab-btn">
                         <i class="fas fa-plus-circle"></i>
                         <span>Invite Collaborator</span>
                     </li>
@@ -541,121 +789,709 @@
             </div>
 
             <div class="content-area">
-                <div class="dashboard">
-                    <div class="dashboard-header">
-                        <h1 class="dashboard-title">The AI Chronicles</h1>
-                        <div class="editor-toolbar">
-                            <button class="toolbar-btn"><i class="fas fa-save"></i> Save</button>
-                            <button class="toolbar-btn"><i class="fas fa-share-alt"></i> Share</button>
-                            <button class="toolbar-btn"><i class="fas fa-robot"></i> AI Assist</button>
-                            <button class="toolbar-btn"><i class="fas fa-file-export"></i> Export</button>
+                <!-- Dashboard Section -->
+                <div class="content-section active" id="dashboard">
+                    <div class="dashboard">
+                        <div class="dashboard-header">
+                            <h1 class="dashboard-title">The AI Chronicles</h1>
+                            <div class="editor-toolbar">
+                                <button class="toolbar-btn"><i class="fas fa-save"></i> Save</button>
+                                <button class="toolbar-btn"><i class="fas fa-share-alt"></i> Share</button>
+                                <button class="toolbar-btn"><i class="fas fa-robot"></i> AI Assist</button>
+                                <button class="toolbar-btn"><i class="fas fa-file-export"></i> Export</button>
+                            </div>
+                        </div>
+
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Completion Status</span>
+                                </div>
+                                <div class="stat-value">68%</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-clock"></i>
+                                    <span>AI Suggestions</span>
+                                </div>
+                                <div class="stat-value">24</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-users"></i>
+                                    <span>Collaborators</span>
+                                </div>
+                                <div class="stat-value">3</div>
+                            </div>
+                        </div>
+
+                        <h2 class="sidebar-title"><i class="fas fa-magic"></i> AI Writing Assistant</h2>
+                        <div class="ai-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h3 class="feature-title">Content Ideas</h3>
+                                <p class="feature-description">Generate creative ideas and writing prompts based on your current content.</p>
+                                <button class="toolbar-btn">Generate Ideas</button>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-pen-fancy"></i>
+                                </div>
+                                <h3 class="feature-title">Style Improvement</h3>
+                                <p class="feature-description">Enhance your writing style, tone, and clarity with AI suggestions.</p>
+                                <button class="toolbar-btn">Improve Writing</button>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-list-ol"></i>
+                                </div>
+                                <h3 class="feature-title">Structure Analysis</h3>
+                                <p class="feature-description">Get recommendations for better content organization and flow.</p>
+                                <button class="toolbar-btn">Analyze Structure</button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="stats-container">
-                        <div class="stat-card">
-                            <div class="stat-title">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Completion Status</span>
+                    <div class="editor-container">
+                        <div class="editor-header">
+                            <h2 class="editor-title">Chapter 3: AI-Assisted Writing</h2>
+                            <div class="editor-toolbar">
+                                <button class="toolbar-btn"><i class="fas fa-text-height"></i></button>
+                                <button class="toolbar-btn"><i class="fas fa-bold"></i></button>
+                                <button class="toolbar-btn"><i class="fas fa-italic"></i></button>
+                                <button class="toolbar-btn"><i class="fas fa-underline"></i></button>
+                                <button class="toolbar-btn"><i class="fas fa-list-ul"></i></button>
+                                <button class="toolbar-btn"><i class="fas fa-list-ol"></i></button>
                             </div>
-                            <div class="stat-value">68%</div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-title">
-                                <i class="fas fa-clock"></i>
-                                <span>AI Suggestions</span>
-                            </div>
-                            <div class="stat-value">24</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-title">
-                                <i class="fas fa-users"></i>
-                                <span>Collaborators</span>
-                            </div>
-                            <div class="stat-value">3</div>
-                        </div>
-                    </div>
 
-                    <h2 class="sidebar-title"><i class="fas fa-magic"></i> AI Writing Assistant</h2>
-                    <div class="ai-features">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h3 class="feature-title">Content Ideas</h3>
-                            <p class="feature-description">Generate creative ideas and writing prompts based on your current content.</p>
-                            <button class="toolbar-btn">Generate Ideas</button>
+                        <div class="editor-content" contenteditable="true">
+                            <p>In the rapidly evolving world of literature and content creation, AI-assisted writing has emerged as a transformative technology. Authors and content creators are now leveraging artificial intelligence to enhance their creativity, streamline their workflow, and overcome writer's block.</p>
+                            
+                            <p>AI writing tools can generate ideas, suggest improvements to existing content, and even help with editing and proofreading. These tools analyze vast amounts of text data to provide suggestions that are contextually relevant and stylistically appropriate.</p>
+                            
+                            <p>One of the key advantages of AI writing assistants is their ability to provide real-time feedback. As you write, the AI can offer suggestions for word choice, sentence structure, and overall coherence. This immediate feedback loop helps writers improve their craft and produce higher quality content faster.</p>
                         </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-pen-fancy"></i>
+
+                        <div class="ai-suggestions">
+                            <h3 class="suggestion-title"><i class="fas fa-robot"></i> AI Suggestions</h3>
+                            <div class="suggestion-item">
+                                <div class="suggestion-text">
+                                    Consider adding a specific example of AI writing tools here for better engagement.
+                                </div>
+                                <div class="suggestion-actions">
+                                    <button class="suggestion-btn btn-accept">Accept</button>
+                                    <button class="suggestion-btn btn-reject">Ignore</button>
+                                </div>
                             </div>
-                            <h3 class="feature-title">Style Improvement</h3>
-                            <p class="feature-description">Enhance your writing style, tone, and clarity with AI suggestions.</p>
-                            <button class="toolbar-btn">Improve Writing</button>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-list-ol"></i>
+                            <div class="suggestion-item">
+                                <div class="suggestion-text">
+                                    The phrase "transformative technology" might be slightly cliché. Consider using "groundbreaking innovation" instead.
+                                </div>
+                                <div class="suggestion-actions">
+                                    <button class="suggestion-btn btn-accept">Accept</button>
+                                    <button class="suggestion-btn btn-reject">Ignore</button>
+                                </div>
                             </div>
-                            <h3 class="feature-title">Structure Analysis</h3>
-                            <p class="feature-description">Get recommendations for better content organization and flow.</p>
-                            <button class="toolbar-btn">Analyze Structure</button>
+                            <div class="suggestion-item">
+                                <div class="suggestion-text">
+                                    You could expand on how AI helps overcome writer's block with specific techniques.
+                                </div>
+                                <div class="suggestion-actions">
+                                    <button class="suggestion-btn btn-accept">Accept</button>
+                                    <button class="suggestion-btn btn-reject">Ignore</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="editor-container">
-                    <div class="editor-header">
-                        <h2 class="editor-title">Chapter 3: AI-Assisted Writing</h2>
-                        <div class="editor-toolbar">
-                            <button class="toolbar-btn"><i class="fas fa-text-height"></i></button>
-                            <button class="toolbar-btn"><i class="fas fa-bold"></i></button>
-                            <button class="toolbar-btn"><i class="fas fa-italic"></i></button>
-                            <button class="toolbar-btn"><i class="fas fa-underline"></i></button>
-                            <button class="toolbar-btn"><i class="fas fa-list-ul"></i></button>
-                            <button class="toolbar-btn"><i class="fas fa-list-ol"></i></button>
+                <!-- My Projects Section -->
+                <div class="content-section" id="my-projects">
+                    <div class="dashboard">
+                        <div class="dashboard-header">
+                            <h1 class="dashboard-title">My Projects</h1>
+                            <button class="btn btn-primary" id="add-project-btn">New Project</button>
                         </div>
-                    </div>
 
-                    <div class="editor-content">
-                        <p>In the rapidly evolving world of literature and content creation, AI-assisted writing has emerged as a transformative technology. Authors and content creators are now leveraging artificial intelligence to enhance their creativity, streamline their workflow, and overcome writer's block.</p>
-                        
-                        <p>AI writing tools can generate ideas, suggest improvements to existing content, and even help with editing and proofreading. These tools analyze vast amounts of text data to provide suggestions that are contextually relevant and stylistically appropriate.</p>
-                        
-                        <p>One of the key advantages of AI writing assistants is their ability to provide real-time feedback. As you write, the AI can offer suggestions for word choice, sentence structure, and overall coherence. This immediate feedback loop helps writers improve their craft and produce higher quality content faster.</p>
-                    </div>
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-folder-open"></i>
+                                    <span>Total Projects</span>
+                                </div>
+                                <div class="stat-value">4</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-pencil-alt"></i>
+                                    <span>Active Projects</span>
+                                </div>
+                                <div class="stat-value">2</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Completed</span>
+                                </div>
+                                <div class="stat-value">1</div>
+                            </div>
+                        </div>
 
-                    <div class="ai-suggestions">
-                        <h3 class="suggestion-title"><i class="fas fa-robot"></i> AI Suggestions</h3>
-                        <div class="suggestion-item">
-                            <div class="suggestion-text">
-                                Consider adding a specific example of AI writing tools here for better engagement.
+                        <h2 class="sidebar-title"><i class="fas fa-book"></i> Recent Projects</h2>
+                        <div class="ai-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <h3 class="feature-title">The AI Chronicles</h3>
+                                <p class="feature-description">A comprehensive guide to AI-assisted writing and its impact on modern literature.</p>
+                                <div class="progress-bar" style="height: 5px; background: #eee; border-radius: 5px; margin: 10px 0;">
+                                    <div style="height: 100%; width: 68%; background: var(--primary); border-radius: 5px;"></div>
+                                </div>
+                                <p class="feature-description">Last edited: 2 hours ago</p>
                             </div>
-                            <div class="suggestion-actions">
-                                <button class="suggestion-btn btn-accept">Accept</button>
-                                <button class="suggestion-btn btn-reject">Ignore</button>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <h3 class="feature-title">Future Technology</h3>
+                                <p class="feature-description">Exploring emerging technologies and their potential impact on society.</p>
+                                <div class="progress-bar" style="height: 5px; background: #eee; border-radius: 5px; margin: 10px 0;">
+                                    <div style="height: 100%; width: 35%; background: var(--primary); border-radius: 5px;"></div>
+                                </div>
+                                <p class="feature-description">Last edited: 3 days ago</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3 class="feature-title">Machine Learning Guide</h3>
+                                <p class="feature-description">A beginner's guide to understanding and applying machine learning concepts.</p>
+                                <div class="progress-bar" style="height: 5px; background: #eee; border-radius: 5px; margin: 10px 0;">
+                                    <div style="height: 100%; width: 90%; background: var(--success); border-radius: 5px;"></div>
+                                </div>
+                                <p class="feature-description">Completed: Aug 15, 2023</p>
                             </div>
                         </div>
-                        <div class="suggestion-item">
-                            <div class="suggestion-text">
-                                The phrase "transformative technology" might be slightly cliché. Consider using "groundbreaking innovation" instead.
+
+                        <h2 class="sidebar-title" style="margin-top: 30px;"><i class="fas fa-chart-line"></i> Writing Statistics</h2>
+                        <div class="ai-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-font"></i>
+                                </div>
+                                <h3 class="feature-title">Total Words</h3>
+                                <p class="feature-description">You've written 52,478 words across all projects</p>
+                                <button class="toolbar-btn">View Details</button>
                             </div>
-                            <div class="suggestion-actions">
-                                <button class="suggestion-btn btn-accept">Accept</button>
-                                <button class="suggestion-btn btn-reject">Ignore</button>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <h3 class="feature-title">Writing Streak</h3>
+                                <p class="feature-description">You've written for 12 consecutive days</p>
+                                <button class="toolbar-btn">Set Goals</button>
                             </div>
-                        </div>
-                        <div class="suggestion-item">
-                            <div class="suggestion-text">
-                                You could expand on how AI helps overcome writer's block with specific techniques.
-                            </div>
-                            <div class="suggestion-actions">
-                                <button class="suggestion-btn btn-accept">Accept</button>
-                                <button class="suggestion-btn btn-reject">Ignore</button>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3 class="feature-title">Productivity</h3>
+                                <p class="feature-description">You're 25% more productive than last month</p>
+                                <button class="toolbar-btn">See Insights</button>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Collaborate Section -->
+                <div class="content-section" id="collaborate">
+                    <div class="dashboard">
+                        <div class="dashboard-header">
+                            <h1 class="dashboard-title">Collaboration Hub</h1>
+                            <button class="btn btn-primary" id="add-collab-btn">Invite New Collaborator</button>
+                        </div>
+
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-user-clock"></i>
+                                    <span>Pending Invitations</span>
+                                </div>
+                                <div class="stat-value">2</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-tasks"></i>
+                                    <span>Assigned Tasks</span>
+                                </div>
+                                <div class="stat-value">7</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-comments"></i>
+                                    <span>Unread Comments</span>
+                                </div>
+                                <div class="stat-value">5</div>
+                            </div>
+                        </div>
+
+                        <h2 class="sidebar-title"><i class="fas fa-users"></i> Team Members</h2>
+                        <ul class="collaborator-list">
+                            <li class="collaborator-item">
+                                <div class="collaborator-info">
+                                    <div class="collaborator-avatar">SJ</div>
+                                    <div>
+                                        <div>Sarah Johnson</div>
+                                        <div class="collaborator-role">Editor</div>
+                                    </div>
+                                </div>
+                                <div>Last active: 2 hours ago</div>
+                            </li>
+                            <li class="collaborator-item">
+                                <div class="collaborator-info">
+                                    <div class="collaborator-avatar">MC</div>
+                                    <div>
+                                        <div>Michael Chen</div>
+                                        <div class="collaborator-role">Writer</div>
+                                    </div>
+                                </div>
+                                <div>Last active: 5 hours ago</div>
+                            </li>
+                            <li class="collaborator-item">
+                                <div class="collaborator-info">
+                                    <div class="collaborator-avatar">EW</div>
+                                    <div>
+                                        <div>Emma Wilson</div>
+                                        <div class="collaborator-role">Researcher</div>
+                                    </div>
+                                </div>
+                                <div>Last active: 1 day ago</div>
+                            </li>
+                        </ul>
+
+                        <h2 class="sidebar-title" style="margin-top: 30px;"><i class="fas fa-tasks"></i> Task Assignments</h2>
+                        <div class="ai-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </div>
+                                <h3 class="feature-title">Chapter 4 Draft</h3>
+                                <p class="feature-description">Assigned to: Michael Chen</p>
+                                <div class="progress-bar" style="height: 5px; background: #eee; border-radius: 5px; margin: 10px 0;">
+                                    <div style="height: 100%; width: 65%; background: var(--primary); border-radius: 5px;"></div>
+                                </div>
+                                <p class="feature-description">Deadline: Aug 30, 2023</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <h3 class="feature-title">Research AI Ethics</h3>
+                                <p class="feature-description">Assigned to: Emma Wilson</p>
+                                <div class="progress-bar" style="height: 5px; background: #eee; border-radius: 5px; margin: 10px 0;">
+                                    <div style="height: 100%; width: 40%; background: var(--primary); border-radius: 5px;"></div>
+                                </div>
+                                <p class="feature-description">Deadline: Sep 5, 2023</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h3 class="feature-title">Final Review Chapter 2</h3>
+                                <p class="feature-description">Assigned to: Sarah Johnson</p>
+                                <div class="progress-bar" style="height: 5px; background: #eee; border-radius: 5px; margin: 10px 0;">
+                                    <div style="height: 100%; width: 100%; background: var(--success); border-radius: 5px;"></div>
+                                </div>
+                                <p class="feature-description">Completed: Aug 25, 2023</p>
+                            </div>
+                        </div>
+
+                        <h2 class="sidebar-title" style="margin-top: 30px;"><i class="fas fa-comments"></i> Recent Comments</h2>
+                        <div class="ai-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h3 class="feature-title">Sarah Johnson</h3>
+                                <p class="feature-description">"The introduction could use more statistical data to support the claims about AI adoption."</p>
+                                <p class="feature-description">On: Chapter 1, 2 days ago</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h3 class="feature-title">Michael Chen</h3>
+                                <p class="feature-description">"I've added a section about GPT-4 capabilities. Please review when you have time."</p>
+                                <p class="feature-description">On: Chapter 3, 5 hours ago</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h3 class="feature-title">Emma Wilson</h3>
+                                <p class="feature-description">"I found some great research papers on AI ethics. Should I add them to the references?"</p>
+                                <p class="feature-description">On: Research Notes, 1 day ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Tools Section -->
+                <div class="content-section" id="ai-tools">
+                    <div class="dashboard">
+                        <div class="dashboard-header">
+                            <h1 class="dashboard-title">AI Writing Tools</h1>
+                            <button class="btn btn-primary">Generate Report</button>
+                        </div>
+
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>Content Ideas Generated</span>
+                                </div>
+                                <div class="stat-value">42</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Suggestions Accepted</span>
+                                </div>
+                                <div class="stat-value">36</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Time Saved</span>
+                                </div>
+                                <div class="stat-value">18 hours</div>
+                            </div>
+                        </div>
+
+                        <h2 class="sidebar-title"><i class="fas fa-wand-magic-sparkles"></i> AI Writing Assistants</h2>
+                        <div class="ai-tools-grid">
+                            <div class="ai-tool">
+                                <div class="ai-tool-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h3 class="ai-tool-title">Idea Generator</h3>
+                                <p class="ai-tool-description">Generate creative writing prompts and content ideas based on your topic.</p>
+                                <button class="toolbar-btn">Try It</button>
+                            </div>
+                            <div class="ai-tool">
+                                <div class="ai-tool-icon">
+                                    <i class="fas fa-paragraph"></i>
+                                </div>
+                                <h3 class="ai-tool-title">Paragraph Rewriter</h3>
+                                <p class="ai-tool-description">Improve your paragraphs with AI-powered rewriting suggestions.</p>
+                                <button class="toolbar-btn">Try It</button>
+                            </div>
+                            <div class="ai-tool">
+                                <div class="ai-tool-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <h3 class="ai-tool-title">Chapter Outliner</h3>
+                                <p class="ai-tool-description">Create detailed chapter outlines with logical flow and structure.</p>
+                                <button class="toolbar-btn">Try It</button>
+                            </div>
+                            <div class="ai-tool">
+                                <div class="ai-tool-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3 class="ai-tool-title">Story Analyzer</h3>
+                                <p class="ai-tool-description">Analyze your story's pacing, character development, and plot structure.</p>
+                                <button class="toolbar-btn">Try It</button>
+                            </div>
+                        </div>
+
+                        <h2 class="sidebar-title" style="margin-top: 30px;"><i class="fas fa-chart-bar"></i> Writing Analytics</h2>
+                        <div class="ai-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <h3 class="feature-title">Readability Score</h3>
+                                <p class="feature-description">Your content has a readability score of 62, which is suitable for general audiences.</p>
+                                <button class="toolbar-btn">Improve Readability</button>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <h3 class="feature-title">Tone Analysis</h3>
+                                <p class="feature-description">Your writing tone is 75% informative, 15% persuasive, and 10% narrative.</p>
+                                <button class="toolbar-btn">Adjust Tone</button>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h3 class="feature-title">Content Structure</h3>
+                                <p class="feature-description">AI suggests reorganizing Chapter 3 for better flow and comprehension.</p>
+                                <button class="toolbar-btn">Optimize Structure</button>
+                            </div>
+                        </div>
+
+                        <h2 class="sidebar-title" style="margin-top: 30px;"><i class="fas fa-history"></i> AI Usage History</h2>
+                        <div class="ai-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h3 class="feature-title">Content Ideas</h3>
+                                <p class="feature-description">Last used: 2 days ago | Total uses: 12</p>
+                                <button class="toolbar-btn">View History</button>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-pen-fancy"></i>
+                                </div>
+                                <h3 class="feature-title">Style Improvement</h3>
+                                <p class="feature-description">Last used: 5 hours ago | Total uses: 24</p>
+                                <button class="toolbar-btn">View History</button>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-list-ol"></i>
+                                </div>
+                                <h3 class="feature-title">Structure Analysis</h3>
+                                <p class="feature-description">Last used: 1 day ago | Total uses: 8</p>
+                                <button class="toolbar-btn">View History</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publish Section -->
+                <div class="content-section" id="publish">
+                    <div class="dashboard">
+                        <div class="dashboard-header">
+                            <h1 class="dashboard-title">Publishing Options</h1>
+                            <button class="btn btn-primary">Export Manuscript</button>
+                        </div>
+
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>Total Pages</span>
+                                </div>
+                                <div class="stat-value">183</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-font"></i>
+                                    <span>Word Count</span>
+                                </div>
+                                <div class="stat-value">52,478</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-title">
+                                    <i class="fas fa-check-double"></i>
+                                    <span>Editing Status</span>
+                                </div>
+                                <div class="stat-value">85%</div>
+                            </div>
+                        </div>
+
+                        <h2 class="sidebar-title"><i class="fas fa-book-open"></i> Publishing Formats</h2>
+                        <div class="publishing-options">
+                            <div class="publishing-option">
+                                <i class="fas fa-file-pdf"></i>
+                                <h3 class="option-title">PDF Export</h3>
+                                <p>High-quality PDF suitable for printing</p>
+                                <button class="toolbar-btn">Export</button>
+                            </div>
+                            <div class="publishing-option">
+                                <i class="fas fa-book"></i>
+                                <h3 class="option-title">Print Ready</h3>
+                                <p>Professional formatting for print publishing</p>
+                                <button class="toolbar-btn">Prepare</button>
+                            </div>
+                            <div class="publishing-option">
+                                <i class="fas fa-tablet-alt"></i>
+                                <h3 class="option-title">Ebook Format</h3>
+                                <p>EPUB and MOBI formats for ebook stores</p>
+                                <button class="toolbar-btn">Convert</button>
+                            </div>
+                        </div>
+
+                        <h2 class="sidebar-title" style="margin-top: 30px;"><i class="fas fa-store"></i> Distribution Channels</h2>
+                        <div class="ai-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fab fa-amazon"></i>
+                                </div>
+                                <h3 class="feature-title">Amazon KDP</h3>
+                                <p class="feature-description">Publish your book directly to Amazon Kindle Direct Publishing.</p>
+                                <button class="toolbar-btn">Connect</button>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-print"></i>
+                                </div>
+                                <h3 class="feature-title">Lulu Print</h3>
+                                <p class="feature-description">Print on-demand services through Lulu.com integration.</p>
+                                <button class="toolbar-btn">Connect</button>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h3 class="feature-title">Website Export</h3>
+                                <p class="feature-description">Export your book as a responsive website for online reading.</p>
+                                <button class="toolbar-btn">Generate</button>
+                            </div>
+                        </div>
+
+                        <h2 class="sidebar-title" style="margin-top: 30px;"><i class="fas fa-chart-pie"></i> Publishing Analytics</h2>
+                        <div class="ai-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h3 class="feature-title">Target Audience</h3>
+                                <p class="feature-description">AI recommends targeting technology enthusiasts aged 25-45.</p>
+                                <button class="toolbar-btn">View Details</button>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <h3 class="feature-title">Keyword Optimization</h3>
+                                <p class="feature-description">Suggested keywords: AI writing, content creation, future technology</p>
+                                <button class="toolbar-btn">Optimize</button>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <h3 class="feature-title">Pricing Strategy</h3>
+                                <p class="feature-description">Recommended price: $9.99 for ebook, $19.99 for print</p>
+                                <button class="toolbar-btn">Set Pricing</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Sign In</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" style="width: 100%;">Sign In</button>
+                </div>
+                <p style="text-align: center;">Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Create Account</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-control" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" class="form-control" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-control" placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" style="width: 100%;">Create Account</button>
+                </div>
+                <p style="text-align: center;">Already have an account? <a href="#" id="switch-to-login">Sign in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="new-project-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Create New Project</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="project-title">Project Title</label>
+                    <input type="text" id="project-title" class="form-control" placeholder="Enter project title">
+                </div>
+                <div class="form-group">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" class="form-control" placeholder="Brief description of your project" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="project-genre">Genre</label>
+                    <select id="project-genre" class="form-control">
+                        <option value="">Select a genre</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="non-fiction">Non-Fiction</option>
+                        <option value="academic">Academic</option>
+                        <option value="biography">Biography</option>
+                        <option value="technical">Technical</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" style="width: 100%;">Create Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="invite-collab-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Invite Collaborator</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="collab-email">Email Address</label>
+                    <input type="email" id="collab-email" class="form-control" placeholder="collaborator@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="collab-role">Role</label>
+                    <select id="collab-role" class="form-control">
+                        <option value="writer">Writer</option>
+                        <option value="editor">Editor</option>
+                        <option value="reviewer">Reviewer</option>
+                        <option value="researcher">Researcher</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="collab-message">Message (Optional)</label>
+                    <textarea id="collab-message" class="form-control" placeholder="Add a personal message" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" style="width: 100%;">Send Invitation</button>
                 </div>
             </div>
         </div>
@@ -706,14 +1542,102 @@
     </footer>
 
     <script>
-        // Simple interactive functionality for demonstration
         document.addEventListener('DOMContentLoaded', function() {
+            // Navigation functionality
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            // Function to switch between sections
+            function switchSection(targetId) {
+                // Hide all sections
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show the target section
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+                
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-target') === targetId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Add click event to all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('data-target');
+                    switchSection(target);
+                });
+            });
+
+            // Modal functionality
+            const modals = {
+                login: document.getElementById('login-modal'),
+                signup: document.getElementById('signup-modal'),
+                newProject: document.getElementById('new-project-modal'),
+                inviteCollab: document.getElementById('invite-collab-modal')
+            };
+
+            const openModal = (modalId) => {
+                modals[modalId].style.display = 'flex';
+            };
+
+            const closeModal = (modalId) => {
+                modals[modalId].style.display = 'none';
+            };
+
+            // Modal triggers
+            document.getElementById('login-btn').addEventListener('click', () => openModal('login'));
+            document.getElementById('signup-btn').addEventListener('click', () => openModal('signup'));
+            document.getElementById('new-project-btn').addEventListener('click', () => openModal('newProject'));
+            document.getElementById('invite-collab-btn').addEventListener('click', () => openModal('inviteCollab'));
+            document.getElementById('add-collab-btn').addEventListener('click', () => openModal('inviteCollab'));
+            document.getElementById('add-project-btn').addEventListener('click', () => openModal('newProject'));
+
+            // Close modals
+            document.querySelectorAll('.close-modal').forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.modal');
+                    modal.style.display = 'none';
+                });
+            });
+
+            // Switch between login and signup modals
+            document.getElementById('switch-to-signup').addEventListener('click', function(e) {
+                e.preventDefault();
+                closeModal('login');
+                openModal('signup');
+            });
+
+            document.getElementById('switch-to-login').addEventListener('click', function(e) {
+                e.preventDefault();
+                closeModal('signup');
+                openModal('login');
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target.classList.contains('modal')) {
+                    e.target.style.display = 'none';
+                }
+            });
+
             // Project selection
             const projectItems = document.querySelectorAll('.project-item');
             projectItems.forEach(item => {
                 item.addEventListener('click', function() {
-                    projectItems.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
+                    if (this.id !== 'new-project-btn' && this.id !== 'invite-collab-btn') {
+                        projectItems.forEach(i => i.classList.remove('active'));
+                        this.classList.add('active');
+                    }
                 });
             });
 
@@ -752,6 +1676,16 @@
                         alert('AI functionality triggered! This would connect to OpenAI API in production.');
                     }
                 });
+            });
+
+            // Make editor content editable
+            const editorContent = document.querySelector('.editor-content');
+            editorContent.addEventListener('focus', function() {
+                this.style.borderColor = '#4361ee';
+            });
+
+            editorContent.addEventListener('blur', function() {
+                this.style.borderColor = '#eee';
             });
         });
     </script>
